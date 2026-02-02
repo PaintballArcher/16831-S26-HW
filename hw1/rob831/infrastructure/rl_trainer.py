@@ -175,7 +175,7 @@ class RL_Trainer(object):
                  
              if isinstance(expert_data, dict):
                 paths = expert_data["paths"]
-            else:
+             else:
                 paths = expert_data
             envsteps_this_batch = sum(len(path["reward"]) for path in paths)
         return paths, envsteps_this_batch, None
