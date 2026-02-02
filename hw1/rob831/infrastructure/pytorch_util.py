@@ -41,9 +41,9 @@ def build_mlp(
             MLP (nn.Module)
     """
     if isinstance(activation, str):
-        activation = _str_to_activation[activation]
+        activation = _str_to_activation.get(activation, nn.Tanh())
     if isinstance(output_activation, str):
-        output_activation = _str_to_activation[output_activation]
+        output_activation = _str_to_activation.get(output_activation, nn.Identity())
 
     # TODO: return a MLP. This should be an instance of nn.Module
     # Note: nn.Sequential is an instance of nn.Module.
