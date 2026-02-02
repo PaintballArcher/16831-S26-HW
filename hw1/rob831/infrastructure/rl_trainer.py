@@ -177,7 +177,7 @@ class RL_Trainer(object):
                 paths = expert_data["paths"]
              else:
                 paths = expert_data
-            envsteps_this_batch = sum(len(path["reward"]) for path in paths)
+             envsteps_this_batch = sum(len(path["reward"]) for path in paths)
         return paths, envsteps_this_batch, None
 
         # TODO collect `batch_size` samples to be used for training
